@@ -1,17 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lumiere Beauty | Pricing</title>
-  <meta name="description" content="Every visible surface should reassure the shopper that the products, claims, and sourcing are controlled and compliant." />
-  <meta property="og:title" content="Lumiere Beauty | Pricing" />
-  <meta property="og:description" content="Every visible surface should reassure the shopper that the products, claims, and sourcing are controlled and compliant." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://lumiereglowco.com/" />
+  <title>Lumiere Beauty | Offer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Questrial:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
-  
 </head>
 <body>
   <main class="page">
@@ -20,55 +14,67 @@
         <span class="brand-mark"></span>
         <span class="brand-copy">
           <strong>Lumiere Beauty</strong>
+          <span>Refined serif wordmark with glow or botanical linework.</span>
         </span>
       </a>
       <nav class="nav">
         <a class='button ghost' href='index.html'>Home</a>
-        <a class='button primary' href='offer.html'>Pricing</a>
-        <a class='button ghost' href='channels.html'>About</a>
+        <a class='button primary' href='offer.html'>Offer</a>
+        <a class='button ghost' href='checkout.html'>Checkout</a>
+        <a class='button ghost' href='channels.html'>Channels</a>
+        <a class='button ghost' href='thank-you.html'>Thank You</a>
       </nav>
     </header>
     
     <section class="hero">
       <article class="hero-card">
-        <div class="eyebrow">Pricing</div>
-        <h1>Simple, transparent pricing.</h1>
-        <p>Choose the plan that fits your needs. Every purchase includes instant digital delivery and dedicated support.</p>
+        <div class="eyebrow">Offer Page System</div>
+        <h1>Lumiere Beauty Offer Architecture</h1>
+        <p>This page shows the designed offer stack, pricing hierarchy, and product or service card rules that should remain aligned across owned and third-party surfaces.</p>
       </article>
       <aside class="hero-card">
-        <h2>What&rsquo;s Included</h2>
-        <ul>
-          <li>Instant digital delivery</li>
-          <li>Dedicated support via <a href="mailto:support@lumiereglowco.com">support@lumiereglowco.com</a></li>
-          <li>14-day satisfaction guarantee</li>
-        </ul>
+        <h2>Inventory Rules</h2>
+        <ul><li>Each product card highlights benefit hierarchy, ingredient highlights, and use order before discount talk.</li><li>Photography uses bright whites, champagne highlights, and accurate skin handling only.</li><li>Collections organize by concern or routine step, not by vendor dump.</li></ul>
       </aside>
     </section>
     <section class="panel" style="margin-top:24px;">
-      <h2>Choose Your Plan</h2>
+      <h2>Offer Cards</h2>
       <div class="offer-grid" style="margin-top:18px;"><article class='offer-card'><h3>Routine Tools Preview</h3><div class='price'>$69</div><p>Bounded preview path for one clean-routine organizer or tool set with operator-reviewed product selection.</p><ul><li>Routine preference capture for one organizer or tool need</li><li>Hero-item shortlist with storage and use-order notes</li><li>Manual follow-up before any future regulated beauty expansion</li></ul></article><article class='offer-card'><h3>Clean Routine Tools Bundle</h3><div class='price'>$139</div><p>One bounded clean-routine bundle centered on the first organizer, tool, and planner products.</p><ul><li>Bounded bundle recommendation with storage and use-order notes</li><li>Routine FAQ and planner handoff</li><li>Operator-reviewed next-step fulfillment note</li></ul></article></div>
     </section>
-    <section class="panel" style="margin-top:24px;">
-      <div class="actions" style="justify-content:center;">
-        <a class="button primary" href="./checkout.html">Proceed to Checkout</a>
-      </div>
-    </section>
     
-    <footer class="site-footer">
-      <div class="footer-note">&copy; 2026 Lumiere Beauty. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="./index.html">Home</a>
-        <a href="./offer.html">Pricing</a>
-        <a href="./channels.html">About</a>
-        <a href='mailto:support@lumiereglowco.com'>Contact</a>
-      </div>
-      <div class="footer-links" style="margin-top:8px;">
-        <a href="./privacy.html">Privacy</a>
-        <a href="./terms.html">Terms</a>
-        <a href="./refunds.html">Refunds</a>
-      </div>
-    </footer>
+    <div class="footer-note">Local deployment pack for Lumiere Beauty. No launch without approval.</div>
   </main>
-  
+
+  <!-- ASI Analytics (lightweight, privacy-friendly) -->
+  <script>
+  (function(){
+    var bid = document.body.getAttribute('data-business-id') || 'unknown';
+    var page = location.pathname.split('/').pop() || 'index.html';
+    var key = 'asi_pv_' + bid;
+    try {
+      var data = JSON.parse(localStorage.getItem(key) || '{}');
+      data[page] = (data[page] || 0) + 1;
+      data._total = (data._total || 0) + 1;
+      data._last = new Date().toISOString();
+      data._ref = document.referrer || 'direct';
+      localStorage.setItem(key, JSON.stringify(data));
+    } catch(e) {}
+    // Beacon to analytics endpoint if configured
+    if (window.ASI_ANALYTICS_URL) {
+      var payload = JSON.stringify({
+        business_id: bid,
+        page: page,
+        referrer: document.referrer || 'direct',
+        timestamp: new Date().toISOString(),
+        ua: navigator.userAgent
+      });
+      try {
+        navigator.sendBeacon(window.ASI_ANALYTICS_URL, payload);
+      } catch(e) {
+        // Silent fail — analytics should never break the site
+      }
+    }
+  })();
+  </script>
 </body>
 </html>
